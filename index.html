@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirouette Gala</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo Pirouette" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Entradas</a></li>
+                <li><a href="#">Programación</a></li>
+                <li><a href="#">Ubicación</a></li>
+                <li><a href="#">Obras</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <img src="images/banner.jpg" alt="Banner Gala Ballet Clásico">
+    </section>
+
+    <section class="descripcion">
+        <p>Donde la danza clásica se encuentra con la emoción contemporánea.<br>
+        Tres días de arte, movimiento y experiencias sensoriales únicas.<br>
+        Descubre el ballet como nunca antes lo habías sentido.</p>
+    </section>
+
+    <section class="boletos">
+        <div class="boletos-contenido">
+          <div class="bloque-compra">
+            <h2>Compra tus entradas</h2>
+          </div>
+          <div class="countdown">
+            <div><span id="months">03</span><br>Meses</div>
+            <div><span id="weeks">01</span><br>Semanas</div>
+            <div><span id="days">02</span><br>Días</div>
+            <div><span id="hours">08</span><br>Horas</div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="obras-destacadas">
+        <h2 class="titulo-obras">Obras Destacadas</h2>
+        <div class="carrusel">
+            <button class="control prev">&#9664;</button>
+        
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/odette.jpg" alt="Odette">
+                <div class="descripcion">
+                  <p>Un suspiro hecho danza.<br><strong><em>Odette</em></strong> encarna la delicadeza del cisne y la fuerza de lo imposible, en una coreografía donde el alma se mueve más que el cuerpo.</p>
+                </div>
+              </div>
+        
+              <div class="slide">
+                <img src="images/fuego.png" alt="Fuego Interior">
+                <div class="descripcion">
+                  <p>La llama que no se apaga.<br><strong><em>Fuego Interior</em></strong> es una obra que arde con pasión y coraje, transformando cada movimiento en una declaración de libertad.</p>
+                </div>
+              </div>
+        
+              <div class="slide">
+                <img src="images/nocturna.png" alt="Nocturna">
+                <div class="descripcion">
+                  <p>Silencio y misterio en escena.<br><strong><em>Nocturna</em></strong> sumerge al espectador en un viaje onírico entre luces y sombras, donde la noche cobra vida al ritmo del cuerpo.</p>
+                </div>
+              </div>
+            </div>
+        
+            <button class="control next">&#9654;</button>
+          </div>
+        </section>
+      
+
+    <section class="programacion">
+        <button class="boton-programacion">Conoce la programación aquí</button>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+            <img src="images/youtube.png" alt="YouTube">
+            <a href="#">Contáctanos</a>
+        </div>
+        <div class="footer-right">
+            <a href="#">EN/ES</a>
+            <a href="#">FAQ</a>
+        </div>
+    </footer>
+
+    <script>
+        const targetDate = new Date("2025-08-15T00:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const months = Math.floor(days / 30);
+            const weeks = Math.floor((days % 30) / 7);
+            const remainingDays = days % 7;
+            document.getElementById("months").innerText = months.toString().padStart(2, '0');
+            document.getElementById("weeks").innerText = weeks.toString().padStart(2, '0');
+            document.getElementById("days").innerText = remainingDays.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const next = document.querySelector('.next');
+        const prev = document.querySelector('.prev');
+        let current = 0;
+      
+        function updateSlides(index) {
+          slides.forEach(slide => slide.classList.remove('active'));
+          slides[index].classList.add('active');
+        }
+      
+        next.addEventListener('click', () => {
+          current = (current + 1) % slides.length;
+          updateSlides(current);
+        });
+      
+        prev.addEventListener('click', () => {
+          current = (current - 1 + slides.length) % slides.length;
+          updateSlides(current);
+        });
+      </script>
+      
+</body>
+</html>
