@@ -1,0 +1,257 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f0eb;
+    color: #2e2e2e;
+}
+
+/* Tipografía Montserrat para textos pequeños */
+p, button, a, span, #countdown {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* mayor separación entre botones */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.descripcion {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .descripcion p {
+    font-size: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* ----- Sección Boletos con fondo de teatro ----- */
+  .boletos {
+    background-image: url("images/teatro.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .boletos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* oscurece ligeramente la imagen */
+    z-index: 0;
+  }
+  
+  .boletos * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Bloque de compra */
+  .bloque-compra {
+    background-color: rgba(210, 184, 163, 0.85); /* rosado claro con opacidad */
+    padding: 20px 60px;
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'DM Serif Display', serif;
+  }
+  
+  .boletos-contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Cuenta regresiva */
+  .countdown {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .countdown div {
+    background-color: rgba(255, 255, 255, 0.8); /* blanco semitransparente */
+    padding: 20px 25px;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 100px;
+    font-weight: bold;
+    color: #000;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .countdown span {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .titulo-obras{
+    font-family: 'DM Serif Display', serif;
+  }
+
+
+  .obras-destacadas {
+    background-color: #a67c65;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .obras-destacadas h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: 'DM Serif Display', serif;
+  }
+  
+  .carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .slides {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1000px;
+  }
+  
+  .slide {
+    display: none;
+    flex-shrink: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #fff;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide.active {
+    display: flex;
+  }
+  
+  .slide img {
+    max-width: 400px;
+    border-radius: 10px;
+    height: auto;
+  }
+  
+  .descripcion {
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    background-color: none;
+  }
+  
+  .descripcion em {
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  .control {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .control:hover {
+    transform: scale(1.1);
+  }
+  
+  .imagen-obra {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 15px;
+  }
+  
+  .texto-obra {
+    max-width: 450px;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+.boton-programacion {
+    background-color: #d2b8a3;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+    font-family: 'DM Serif Display', serif;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: white;
+    padding: 15px 20px;
+    font-family: 'DM Serif Display', serif;
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer img {
+    height: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+  
